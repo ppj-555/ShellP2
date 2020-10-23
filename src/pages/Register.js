@@ -52,47 +52,85 @@ class Register extends Component{
         <div>
            <hr/>
             <h1>Patient Registration</h1><hr/>
-  <Form>
-  <Form.Row>
-    <Form.Group as={Col } controlId="formGridName">
-      <Form.Label><h3>Name</h3></Form.Label>
-      <Form.Control type="name" placeholder="Enter patient's name" />
-    </Form.Group>
+          <Form>
+          <Form.Group as={Row} controlId="formHorizontalEmail">
+          <Form.Label column sm={2}>
+          Name 
+          </Form.Label>
+          <Col sm={10}>
+          <Form.Control type="text" placeholder="Patient Name" />
+          </Col>
+          </Form.Group>
+         
+          <Form.Group as={Row} controlId="formHorizontalEmail">
+          <Form.Label column sm={2}>
+          DOB 
+          </Form.Label>
+          <Col sm={10}>
+          <Form.Control type="date" placeholder="DateofBirth" />
+          </Col>
+          </Form.Group>
 
-    <Form.Group as={Col} controlId="formGridDOB">
-      <Form.Label><h3>DOB</h3></Form.Label>
-      <Form.Control type="DOB" placeholder="Enter Dob" />
-    </Form.Group>
-  </Form.Row>
+          <Form.Group as={Row} controlId="formHorizontalEmail">
+          <Form.Label column sm={2}>
+          Address 
+          </Form.Label>
+          <Col sm={10}>
+          <Form.Control type="text" placeholder="Address" />
+          </Col>
+          </Form.Group>
 
-  <Form.Group controlId="formGridAddress1">
-    <Form.Label><h3>Address Line 1</h3></Form.Label>
-    <Form.Control size="lg" placeholder="1234 Main St" />
-  </Form.Group>
+          <Form.Group as={Row} controlId="formHorizontalEmail">
+          <Form.Label column sm={2}>
+          Contact 
+          </Form.Label>
+          <Col sm={10}>
+          <Form.Control type="text" placeholder="Mobile Number" />
+          </Col>
+          </Form.Group>
 
-  <Form.Group controlId="formGridAddress2">
-    <Form.Label><h3>Address Line 2</h3></Form.Label>
-    <Form.Control placeholder="Apartment, studio, or floor" />
-  </Form.Group>
+          <Form.Group as={Row} controlId="formHorizontalEmail">
+          <Form.Label column sm={2}>
+          Email 
+          </Form.Label>
+          <Col sm={10}>
+          <Form.Control type="email" placeholder="Email" />
+          </Col>
+          </Form.Group>
 
-  <Form.Row>
-    <Form.Group as={Col} controlId="formGridContact">
-      <Form.Label><h3>Contact</h3></Form.Label>
-      <Form.Control placeholder="Enter mobile number"/>
-    </Form.Group>
+          <Form.Group as={Row} controlId="formHorizontalEmail">
+          <Form.Label column sm={2}>
+          Doc Name 
+          </Form.Label>
+          <Col sm={10}>
+          <Form.Control type="text" placeholder="Doctor's Name" />
+          </Col>
+          </Form.Group>
 
+          <Form.Group as={Row} controlId="formHorizontalEmail">
+          <Form.Label column sm={2}>
+          Date 
+          </Form.Label>
+          <Col sm={10}>
+          <Form.Control type="date" placeholder="Appointment Date" />
+          </Col>
+          </Form.Group>
 
-    <Form.Group as={Col} controlId="formGridEmail">
-      <Form.Label><h3>Email</h3></Form.Label>
-      <Form.Control placeholder="Enter email"/>
-    </Form.Group>
-  </Form.Row>
+          <Form.Group as={Row} controlId="formHorizontalEmail">
+          <Form.Label column sm={2}>
+          Time 
+          </Form.Label>
+          <Col sm={10}>
+          <Form.Control type="time" placeholder="Appointment Time" />
+          </Col>
+          </Form.Group>
 
 
   <Button variant="dark" type="submit">
     Submit
   </Button>
-</Form>
+  </Form>
+
 </div>
 
       
