@@ -41,11 +41,13 @@ class Search extends Component{
      showID = (event) =>{
         $("#patientid").show();
         $("#patientname").hide();
+         $("#btnn").show();
     }
     
     showName = (event) =>{
        $("#patientname").show();
        $("#patientid").hide();
+        $("#btnn").show();
    }
     render(){
         return(
@@ -68,7 +70,10 @@ class Search extends Component{
             <label>Patient Name</label>
             <input type="text" className="form-control"  name="name" value={this.state.name} onChange ={this.handleChange}/>
         </div>
+            
+         <div id="btnn">
         <Button variant="dark">Search</Button>
+        </div>
         </form>
       </div>
 )}
