@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import {Button} from 'react-bootstrap';
+import {Button,ToggleButtonGroup,ButtonGroup} from 'react-bootstrap';
 import {Container,Col,Row} from 'react-bootstrap';
 import $ from "jquery";
 import {findDOMNode} from 'react-dom';
+import './search.css';
 
 class Search extends Component{
     constructor(props){
@@ -37,48 +38,38 @@ class Search extends Component{
        this.setState({[event.target.name]: event.target.value});
      }
   
-     handleToggle = () => {
-        const el = findDOMNode(this.refs.toggle);
-        const el1 = findDOMNode(this.refs.toggle1);
-        $(el).show();
-        $(el1).hide();
-        }
-
-    handleToggle1 = () => {
-        const el = findDOMNode(this.refs.toggle);
-        const el1 = findDOMNode(this.refs.toggle1);
-        $(el).hide();
-        $(el1).show();    
-        }
+     showID = (event) =>{
+        $("#patientid").show();
+        $("#patientname").hide();
+    }
+    
+    showName = (event) =>{
+       $("#patientname").show();
+       $("#patientid").hide();
+   }
     render(){
         return(
         <div>
-        <Container>
-        <Col>
-        <hr/>
-        <h1>Search for Patient Records</h1>
-        <hr/>
-        </Col>
-        <Button variant="dark" onClick={this.handleToggle}>Search by ID</Button>
-        <Button variant="dark" onClick={this.handleToggle1}>Search by Name</Button>
+            <hr/>
+            <h1>Search Patiend Record</h1>
+            <hr/>
+            <br/>
+        <form onSubmit={this.handleSubmit}>
+        <ButtonGroup aria-label="Basic example">
+          <Button variant="warning" onClick={this.showID}>Search by id</Button>
+          <Button variant="danger" onClick={this.showName}>Search by name</Button>
+        </ButtonGroup>
         <br/>
-        <br/>
-        <form ref="toggle" onSubmit={this.handleSubmit}>
-          
-     <Col> <h3>Enter Patient Id:</h3><input type="text" id="fname" name="fname"></input></Col><br/>
-
-      <Col><Button variant="dark">Submit</Button></Col>
-      
+        <div className="form-group" id="patientid">
+            <label>Patient ID</label>
+            <input type="text" className="form-control"  name="id" value={this.state.id} onChange ={this.handleChange}/>
+        </div>
+        <div className="form-group" id="patientname">
+            <label>Patient Name</label>
+            <input type="text" className="form-control"  name="name" value={this.state.name} onChange ={this.handleChange}/>
+        </div>
+        <Button variant="dark">Search</Button>
         </form>
-
-        <form ref="toggle1" onSubmit={this.handleSubmit}>
-          
-        <Col> <h3>Enter Patient Name:</h3><input type="text" id="fname" name="fname"></input></Col><br/>
-     
-        <Col><Button variant="dark">Submit</Button></Col>
-           
-        </form>
-        </Container>
       </div>
 )}
 }
