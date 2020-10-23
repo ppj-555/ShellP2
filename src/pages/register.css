@@ -1,0 +1,22 @@
+h1{
+    color: #4d4d4d; /* Green */
+    font-size: 35px;
+    text-align:center;
+}
+
+body {
+    text-align: center;
+}
+form {
+    display: inline-block;
+    border-style: solid;
+    border-radius: 25px;
+    border-width: 3px;
+    border-left-width: 5px;
+    border-right-width: 5px;
+    border-color: #4d4d4d;
+}
+
+input[type=text]:focus {
+    border: 3px solid #555;
+  }

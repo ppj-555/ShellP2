@@ -1,0 +1,9 @@
+body{
+    background-image:url(./img7.jpg);
+    backface-visibility: hidden;
+    background-attachment: fixed;
+    background-position: bottom;
+    opacity: 0.8;
+    z-index: -1;
+    background-repeat: no-repeat;
+}
